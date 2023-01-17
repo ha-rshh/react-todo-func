@@ -1,38 +1,208 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #545454;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navBar {
+  height: 60px;
+  background-color: white;
+  padding-left: 30px;
+  padding-top: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.subscript {
+  position: relative;
+  top: 10px;
+  right: 30px;
+  font-size: 0.6rem;
+  color: #5bd665;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  min-height: 90vh;
+}
+
+.todoContainer {
+  width: 50%;
+  padding: 30px;
+}
+
+.todo__left {
   display: flex;
   flex-direction: column;
+  height: 80vh;
+  padding: 20px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 20px;
   color: white;
+
 }
 
-.App-link {
-  color: #61dafb;
+
+.todoForm {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calendarContainer {
+  width: 50%;
+  display: flex;
+  position: relative;
+  top: 100px;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  font-size: 15px;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  border: none;
+  margin: 0 10px;
+
+}
+
+.allTodos {
+  list-style: none;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.singleTodo {
+  border-radius: 0.5rem;
+  margin: 10px 0px;
+  background-color: #13cf3c;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  width: 600px;
+}
+.todoText{
+  flex: 1;
+}
+/*                          Input Wrapper CSS                       */
+.textInputWrapper {
+  position: relative;
+  --accent-color: #a3e583;
+  width: 75%;
+}
+
+.textInputWrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.textInputWrapper:before,
+.textInputWrapper:after {
+  content: "";
+  left: 0;
+  right: 0;
+  position: absolute;
+  pointer-events: none;
+  bottom: -1px;
+  z-index: 4;
+  width: 101%;
+}
+
+.textInputWrapper:focus-within:before {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.textInputWrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.textInputWrapper:focus-within:before {
+  border-bottom: 1px solid var(--accent-color);
+  transform: scaleX(1);
+}
+
+.textInputWrapper:focus-within:after {
+  border-bottom: 2px solid var(--accent-color);
+  transform: scaleX(1);
+}
+
+.textInputWrapper:after {
+  content: "";
+  transform: scaleX(0);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  will-change: transform;
+  border-bottom: 2px solid var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+.textInput::placeholder {
+  transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  opacity: 1;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.582);
+}
+
+.textInputWrapper .textInput {
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
+  max-height: 36px;
+  background-color: #252525;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 200ms;
+  transition-property: background-color;
+  color: #e8e8e8;
+  font-size: large;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+  padding: 0.5rem 0;
+  padding-left: 0.5rem;
+  width: 100%;
+}
+
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+  outline: none;
+}
+
+.textInputWrapper:focus-within .textInput,
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+  background-color: #353535;
+}
+
+.textInputWrapper:focus-within .textInput::placeholder {
+  opacity: 0;
+}
+
+/*                    Add button css                   */
+.cssbuttons-io-button {
+  display: flex;
+  padding: 0 1rem;
+  align-items: center;
+  font-size: large;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgba(20, 167, 62, 1) 0%, rgba(102, 247, 113, 1) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+  letter-spacing: 0.05em;
+  border-radius: 0.3rem;
+}
+
+.cssbuttons-io-button svg {
+  margin-right: 6px;
+}
+
+.cssbuttons-io-button:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+  cursor: pointer;
+}
+
+.cssbuttons-io-button:active {
+  box-shadow: 0 0.3em 1em -0.5em #14a73e98;
 }
