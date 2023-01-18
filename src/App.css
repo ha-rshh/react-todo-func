@@ -7,17 +7,21 @@
 }
 
 body {
-  background-color: #545454;
+  min-height: 100vh;
+  background-color: #333c34;
+  background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.34));
 }
 
 .navBar {
+  color: rgb(233, 233, 233);
   height: 70px;
   position: relative;
   left: 0;
   right: 0;
-  background-color: white;
+  background-color: rgba(27, 122, 74, 0.628);
   padding-left: 30px;
   display: flex;
+  box-shadow: 1px 1px 20px rgba(129, 255, 140, 0.677);
 }
 
 .colorGreen {
@@ -76,7 +80,7 @@ h1 {
 
 .todo-container {
   border-radius: 1rem;
-  width: 500px;
+  width: 700px;
   height: 70vh;
   position: absolute;
   top: 50%;
@@ -97,7 +101,7 @@ h1 {
 .todoInput {
   outline: none;
   border-radius: 5px;
-  padding: 5px;
+  padding: 8px;
   width: 80%;
   font-size: 20px;
   border: none;
@@ -124,11 +128,11 @@ h1 {
 
  .add-btn {
   padding: 0.3rem 0.5rem;
-  font-size: 15px;
+  font-size: 20px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 .add-btn:hover {
@@ -144,9 +148,17 @@ h1 {
   background-color: #28d036;
   transition: 0.2s;
 }
+.TodoList{
+  color: white;
+  padding: 0 30px;
+}
+.TodoList > h3{
+  padding-bottom: 5px;
+  border-bottom: 2px solid #28d036;
+}
 
 .allTodos {
-  padding: 0 20px;
+  margin-top: 10px;
   color: white;
   font-size: 20px;
   list-style: none;

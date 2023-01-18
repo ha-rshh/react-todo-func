@@ -9,7 +9,6 @@ const App = () => {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -31,14 +30,20 @@ const App = () => {
   //     }
   //   })
   // }
-  const handleCompleted = (todo, index)=>{
-      let updatedTodo = [
-        ...todo.slice(0, index),
-        ...todo.slice(index + 1),
-        ...todo.slice(index, index + 1)
-      ]
-    }
-  }
+  const handleCompletedById = (id) => {
+    let index;
+    const updated = todos.forEach((todo, index) => {
+      if (todo.id === id) {
+        index = todos.indexOf(todo);
+        let newArr = [
+          ...todos.slice(0, index),
+          ...todos.slice(index + 1),
+          ...todos.slice(index, index + 1),
+        ];
+      }
+      setTodos([updated])
+    });
+  };
 
   return (
     <>
@@ -59,16 +64,23 @@ const App = () => {
               Add
             </button>
           </form>
+          <div className="TodoList">
+          <h3>Your todos ...</h3>
           <ul className="allTodos">
             {todos.map((t) => (
               <li className="singleTodo" id="">
                 <span className="todoText" key={t.id}>
                   {t.todo}
                 </span>
-                <button className="btn" 
-                onClick={() => {
-                  handleCompleted(t.id);
-                }} > ✔ </button>
+                <button
+                  className="btn"
+                  onClick={() => {
+                    handleCompletedById(t.id);
+                  }}
+                >
+                  {" "}
+                  ✔{" "}
+                </button>
                 <button
                   className="btn"
                   onClick={() => {
@@ -80,6 +92,7 @@ const App = () => {
               </li>
             ))}
           </ul>
+          </div>
         </div>
       </div>
     </>
