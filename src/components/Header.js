@@ -5,8 +5,12 @@ export default function () {
     <div>
       <div className="navBar">
         <h1>
-          Todo Hanger<span className="subscript">Your personal todo app</span>
+          <span className="colorGreen">T</span>odo <span className="colorGreen">H</span>anger<span className="subscript">Your personal todo app</span>
         </h1>
+        <div className="login">
+          <button className="loginBtn">Login</button>
+          <button className="feedbackBtn">Feedback</button>
+        </div>
       </div>
     </div>
   );
