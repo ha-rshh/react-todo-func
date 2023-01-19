@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-todo-func/static/css/main.3dc41d92.css",
+    "main.js": "/react-todo-func/static/js/main.0832bedf.js",
+    "index.html": "/react-todo-func/index.html",
+    "main.3dc41d92.css.map": "/react-todo-func/static/css/main.3dc41d92.css.map",
+    "main.0832bedf.js.map": "/react-todo-func/static/js/main.0832bedf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3dc41d92.css",
+    "static/js/main.0832bedf.js"
+  ]
+}
